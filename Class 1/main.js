@@ -12,7 +12,7 @@ $location.url('home')
 })
 
 
-foodieApp.controller('mainController', function($scope)//hmne main controller bnaya jo hmare main page ko control krega
+foodieApp.controller('mainController', function($scope)//hmne main controller bnaya jo hmare main page ko control krega,$scope is an object to which we can add a list of properties and functions.
 {
 	$scope.restaurants = [{          //scope mai restaurants nam ka ek array bnaya or different different restaurants ki details di
 		name: 'Farzi Cafe',
@@ -26,42 +26,42 @@ foodieApp.controller('mainController', function($scope)//hmne main controller bn
 		image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg',
 		id: 1
 	}, {
-		name: 'Healthy Food',
-		address: '38/39, Level 1, Block E , Inner Circle, Connaught Place',
-		location: 'Connaught Place',
-		category: 'Casual Dining, Bar',
-		vote: '4.2',
-		cuisines: 'Modern Indian',
-		cost: '2200',
-		hours: '12 Noon to 1 AM (Mon-Sun)',
-		image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg',
+		name: 'Hari Kathi Roll',
+		address: 'Kishangarh Road , Nr. Dr. Arya Hospital, Huda.', 
+		location: ' Shahabad Markanda Haryana 136135',
+		category: 'Fast Food restaurant',
+		vote: '3.7',
+		cuisines: 'Fast food & Snacks',
+		cost: '100',
+		hours: '9 AM to 10 PM (Mon-Sun)',
+		image: 'kathi-roll.jpg',
 		id: 2
   },
   {
-		name: 'Bake well',
-		address: '38/39, Level 10, Block F , Inner Circle, Corol bagh',
-		location: 'Connaught Place',
-		category: 'Bakery',
-		vote: '4.4',
-		cuisines: 'Desert',
-		cost: '200',
-		hours: '12 Noon to 10 PM (Mon-Sun)',
+		name: 'Harbourside Restaurant',
+		address:'Ladwa Road,Near Hdfc bank,Batra Complex,1st Floor',
+		location: 'Markanda, Shahabad Markanda, Haryana 136135',
+		category: 'Complete Family Food Court',
+		vote: '4.0',
+		cuisines: 'Sweets and Food court',
+		cost: '500',
+		hours: '9 Am to 10 PM (Mon-Sun)',
 		image: 'https://tobuz.com/wp-content/uploads/2016/12/sweet-tooth-fairy-bakery-5.jpg',
 		id: 3
 	}];
 console.log($scope.restaurants[0].name);
 $scope.change = function(){
 $scope.restaurants.push({
-	name: 'Bake well',
-	address: '38/39, Level 10, Block F , Inner Circle, Corol bagh',
-	location: 'Connaught Place',
-	category: 'Bakery',
-	vote: '4.4',
-	cuisines: 'Desert',
-	cost: '200',
-	hours: '12 Noon to 10 PM (Mon-Sun)',
-	image: 'https://tobuz.com/wp-content/uploads/2016/12/sweet-tooth-fairy-bakery-5.jpg',
-	id: 3
+	name: 'Harbourside Restaurant',
+		address:'Ladwa Road,Near Hdfc bank,Batra Complex,1st Floor',
+		location: 'Markanda, Shahabad Markanda, Haryana 136135',
+		category: 'Complete Family Food Court',
+		vote: '4.0',
+		cuisines: 'Sweets and Food court',
+		cost: '500',
+		hours: '9 Am to 10 PM (Mon-Sun)',
+		image: 'https://tobuz.com/wp-content/uploads/2016/12/sweet-tooth-fairy-bakery-5.jpg',
+		id: 3
 });
 
 console.log($scope);
@@ -72,7 +72,8 @@ console.log($scope.$parent.restaurants);
 })
 
 
-foodieApp.controller('restaurantController', function($scope, $routeParams, $http) //ek or controller bnaya jo hmare restaurant wale page ko control krega
+foodieApp.controller('restaurantController', function($scope, $routeParams, $http) //ek or controller bnaya jo hmare restaurant wale page ko control krega,pramas is parameter and $http kuki hmne clarify use kiya h or uss se ingredients lene k liye toh http ki help se hm http requst generate krte h.
+                     
 {
 	$scope.restaurantId = $routeParams.id;
 	var restaurants = [{
@@ -91,25 +92,26 @@ foodieApp.controller('restaurantController', function($scope, $routeParams, $htt
 		}
 	},
   {
-    name: 'Healthy Food',
-    address: '38/39, Level 1, Block E , Inner Circle, Connaught Place',
-    location: 'Connaught Place',
-    category: 'Casual Dining, Bar',
-    vote: '4.2',
-    cuisines: 'Modern Indian',
-    cost: '2200',
-    hours: '12 Noon to 1 AM (Mon-Sun)',
-    image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg',
+    name: 'Hari Kathi Roll',
+		address: 'Kishangarh Road , Nr. Dr. Arya Hospital, Huda.', 
+		location: ' Shahabad Markanda Haryana 136135',
+		category: 'Fast Food restaurant',
+		vote: '3.7',
+		cuisines: 'Fast food & Snacks',
+		cost: '100',
+		hours: '9 AM to 10 PM (Mon-Sun)',
+		image: 'kathi-roll.jpg',
   }, {
-		name: 'Bake well',
-		address: '38/39, Level 10, Block F , Inner Circle, Corol bagh',
-		location: 'Connaught Place',
-		category: 'Bakery',
-		vote: '4.4',
-		cuisines: 'Desert',
-		cost: '200',
-		hours: '12 Noon to 10 PM (Mon-Sun)',
-		image: 'https://tobuz.com/wp-content/uploads/2016/12/sweet-tooth-fairy-bakery-5.jpg'
+		name: 'Harbourside Restaurant',
+		address:'Ladwa Road,Near Hdfc bank,Batra Complex,1st Floor',
+		location: 'Markanda, Shahabad Markanda, Haryana 136135',
+		category: 'Complete Family Food Court',
+		vote: '4.0',
+		cuisines: 'Sweets and Food court',
+		cost: '500',
+		hours: '9 Am to 10 PM (Mon-Sun)',
+		image: 'https://tobuz.com/wp-content/uploads/2016/12/sweet-tooth-fairy-bakery-5.jpg',
+		
 	}]
 				$scope.x = 0;
 				$scope.toggle=function(){
@@ -188,8 +190,8 @@ foodieApp.controller("todo", function($scope) {
 
 			}
 			$scope.filter = function() {
-$scope.bought=[];
-$scope.nbought=[];
+                     $scope.bought=[];
+                     $scope.nbought=[];
 				for (var i = 0; i < $scope.grocery.length; i++) {
 					if ($scope.grocery[i].buy) {
 						$scope.bought.push($scope.grocery[i]);
@@ -207,7 +209,7 @@ $scope.nbought=[];
 
 
 
-foodieApp.config(function ($routeProvider) //config ek function h jo allow krta h hmari app ko set-up krne k liye kisi trike se
+foodieApp.config(function ($routeProvider) //config ek function h jo allow krta h hmari app ko set-up krne k liye in some way
 
 //route provider ek object pass kiya h jo route setup krta h
 {
